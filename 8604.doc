@@ -1,0 +1,748 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+	Student @ AIOU
+</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet" />
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <style type="text/css">
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: lightgray;
+            z-index: 99;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            -moz-opacity: 0.8;
+            min-height: 100%;
+            width: 100%;
+        }
+
+        .loading {
+            font-family: Arial;
+            font-size: 10pt;
+            width: 100px;
+            height: 50px;
+            display: none;
+            position: fixed;
+            background-color: transparent;
+            z-index: 999;
+            margin: auto;
+            text-align: center;
+            padding-top: 35px;
+        }
+    </style>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+
+        function ShowSendingProgress() {
+            var modal = $('<div  />');
+            modal.addClass("modal");
+            modal.attr("id", "modalSending");
+            $('body').append(modal);
+            var loading = $("#modalSending.loading");
+            loading.show();
+            var top = '48%';
+            var left = '48%';
+            loading.css({ top: top, left: left, color: '#ffffff' });
+
+        }
+        function StopProgress() {
+
+            $("div.modal").hide();
+
+            var loading = $(".loading");
+            loading.hide();
+        }
+        </script>
+
+
+    <style type="text/css">
+        .auto-style1 {
+            width: auto;
+        }
+        .auto-style2 {
+            font-size: large;
+        }
+        .auto-style4 {
+            text-align: center;
+            width: 75%;
+        }
+        .auto-style7 {
+            color: #FF0000;
+        }
+        .auto-style8 {
+            margin-right: 2px;
+            margin-left: 2px;
+            margin-bottom: 3px;
+            text-align: right;
+        }
+        .auto-style9 {
+            width: 122px;
+        }
+        .auto-style10 {
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(window).load(function () {
+            $(".loader").fadeOut("slow");
+        });
+
+</script>
+
+
+
+    <script type="text/javascript">
+        function swap(targetId) {
+            if (document.getElementById) {
+                target = document.getElementById(targetId);
+                if (target.style.display == "none") {
+                    target.style.display = "";
+
+                } else {
+                    target.style.display = "none";
+                }
+
+            }
+        }
+</script>
+    <script type="text/javascript">
+        function print() {
+
+            var disp_setting = "toolbar=no,location=no,directories=no,menubar=no, ";
+            disp_setting += "scrollbars=no,width=900, height=700, left=50, top=25";
+            var content_vlue = GenerateTable();
+            var docprint = window.open("", "", disp_setting);
+            docprint.document.open();
+            docprint.document.write('<html><head><style>.print button{display:none}</style>');
+            docprint.document.write('<link id="Link1" href="../App_Themes/GrayTheme/StyleSheet.css" rel="stylesheet" type="text/css" />');
+            docprint.document.write('</head><body onload="self.print(); self.close();"><center>');
+            docprint.document.write('<br>');
+            docprint.document.write(content_vlue);
+
+            docprint.document.write('</center></body></html>');
+            docprint.document.close();
+            docprint.focus();
+            return false;
+        }
+
+        function GenerateTable() {
+            //debugger;
+
+
+
+            var table = "";
+            table = "<table width=95% height=686 border=1 cellpadding=0 cellspacing=0 align=center>" +
+ "<tr><td>" +
+
+ 	"<table width=95% height=686 border=0 cellpadding=0 cellspacing=0>" +
+                                 "<tr><td width=26 height=19>&nbsp;</td>" +
+                                    "<td width=564><h3 align=center>&nbsp;</h3></td>" +
+                                    "<td width=18>&nbsp;</td>" +
+                                  "</tr><tr><td height=584>&nbsp;</td><td valign=top><div align=center>" +
+                  "<table width=594 border=0 align=center cellpadding=0 cellspacing=0 bordercolor=#FFFFFF cellpadding=0>" +
+                                          "<tr><td><div align=center><font size=2 face=Verdana, Arial, Helvetica, sans-serif><img src=Images/logo.png width=100 height=80></font></div></td>" +
+                                            "<td colspan=3><div align=center><strong><font size=2 face=Verdana, Arial, Helvetica, sans-serif> </font></strong><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Allama Iqbal Open University</strong><br>" +
+                                              "</font> <font size=2 face=Verdana, Arial, Helvetica, sans-serif> &nbsp;Web Section, Computer Center <br>Web-Based Roll No Slip" +
+
+                                             " </font></div></td>" +
+                                          "</tr>" +
+                                          "<tr> " +
+                                           " <td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+											"<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                            "<td width=100><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font>" +
+
+						  					"<img src='" + $("#Image1").attr('src') + "' width=98 height=105 align=texttop border=1>" +
+											//<img src="../picture/.jpg" width="98" height="105" align="texttop" border="1">
+
+											"<!--<img src='" + $("#Image1").attr('src') + "' width=98 height=105 align=texttop border=1>-->" +
+
+						                  "</td>" +
+                                          "</tr>" +
+		                                  "<tr bgcolor=#FFFFFF>" +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Semester:</strong></font></td>" +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([Labelrollnumberslip]).text().trim() + "" +
+
+                                            "</font></td><td><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Programme:</strong></font></td>" +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([LabelProgram]).text().trim() + "</font></td>" +
+                                          "</tr> <tr bgcolor=#FFFFFF> " +
+                                           " <td width=115><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Roll No:</strong></font></td>" +
+                                            "<td width=159><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([LabelRollNumber]).text().trim() + "" +
+                                            "&nbsp;</font></td>" +
+                                            "<td width=91><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Reg. No:</strong></font></td>" +
+                                            "<td width=129><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([LabelRegistration]).text().trim() + "" +
+                                            "&nbsp;</font></td>" +
+                                         " </tr>" +
+                                          "<tr bgcolor=#FFFFFF>" +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong> Name:</strong></font></td>" +
+                                            "<td colspan=2><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([Labelname]).text().trim() + "" +
+                                            "</font><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                           " <td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                         " </tr>" +
+                                          "<tr bgcolor=#FFFFFF> " +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Father Name:</strong></font></td>" +
+                                            "<td colspan=2><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([Labelfathername]).text().trim() + "" +
+                                            "&nbsp;</font><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                          "</tr>" +
+                                          "<tr bgcolor=#FFFFFF> " +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Address:</strong></font></td>" +
+                                            "<td colspan=3><font size=2 face=Verdana, Arial, Helvetica, sans-seri>" + $([LabelAddress]).text().trim() + " " +
+		                                    "&nbsp;</font></td>" +
+                                          "</tr>" +
+                                          "<tr bgcolor=#FFFFFF> " +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                            "<td colspan=3><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([Labeltehsil]).text().trim() + "" +
+                                           " " + $([Labeldistrict]).text().trim() + "" +
+                                            " &nbsp;<RS(DNAME)></font></td>" +
+                                          "</tr></table>" +
+                                        "<br>" +
+
+
+
+
+
+
+                                        "<table width=602 border=2 align=center cellpadding=0 cellspacing=0 bordercolor=#FFFFFF>" +
+
+                                          "<tr align=center valign=top bordercolor=#000000>" +
+                                            "<td width=45 rowspan=2><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Sr.No.</strong></font></td>" +
+                                            "<td width=58 rowspan=2><strong><font size=2 face=Verdana, Arial, Helvetica, sans-serif>Course</font></strong></td>" +
+                                            "<td width=39 rowspan=2><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Day</strong></font></td>" +
+                                            "<td width=67 rowspan=2><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Date</strong></font></td>" +
+                                            "<td colspan=2><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Time</strong></font></td>" +
+                                            "<td width=70 rowspan=2><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Center No</strong></font></td>" +
+                                            "<td width=300 rowspan=2><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>Examination Center </strong></font></td>" +
+                                            "</tr>" +
+                                          "<tr align=center valign=top bordercolor=#FFFFFF>" +
+                                          " <td width=46 height=22 bordercolor=#000000><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>From</strong></font></td>" +
+                                           "<td width=47 bordercolor=#000000><font size=2 face=Verdana, Arial, Helvetica, sans-serif><strong>To</strong></font></td>" +
+                                            "</tr>" +
+
+                                        "<tr align=center valign=top bordercolor=#000000>" +
+                                        "<td>" + printContent + "</td>" +
+
+		                                "</tr>" +
+
+                                          "<tr align=center bordercolor=#000000> " +
+                                            "<td width=45 height=20><font size=2 face=Verdana, Arial, Helvetica, sans-serif>1.</font></td>" +
+                                            "<td width=58><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([printContent]).val().trim() + "" +
+                                            "&nbsp;</font></td>" +
+                                            "<td width=39><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC2]).val().trim() + "" +
+                                            "&nbsp;</font></td>" +
+                                            "<td width=67><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC3]).val().trim() + "" +
+                                            "&nbsp;</font></td>" +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC4]).val().trim() + "" +
+                                            "&nbsp;</font></td>" +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC5]).val().trim() + "" +
+                                            "&nbsp;</font></td>" +
+											 "<td width=35><font size=2 face=Verdana, Arial, Helvetica, sans-serif> " + $([hfC6]).val().trim() + "" +
+                                             "&nbsp;</font></td>" +
+                                            "<td align=left width=282><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC7]).val().trim() + "" +
+
+                                            "&nbsp;" + $([hfC8]).val().trim() + "&nbsp;</font></td></tr>" +
+
+//                                            if(+$[hfC9].val().trim()!="")
+
+                                                "<tr align=center bordercolor=#000000> " +
+                                              "<td width=45 height=20><font size=2 face=Verdana, Arial, Helvetica, sans-serif>2.</font></td>" +
+                                              "<td width=58><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC9]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td width=39><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC10]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td width=67><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC11]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC12]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC13]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                               "<td width=35><font size=2 face=Verdana, Arial, Helvetica, sans-serif> " + $([hfC14]).val().trim() + "" +
+                                               "&nbsp;</font></td>" +
+                                              "<td align=left width=282><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC15]).val().trim() + "" +
+
+                                              "&nbsp;" + $([hfC16]).val().trim() + "&nbsp;</font></td>" +
+
+             //
+
+
+                                                "<tr align=center bordercolor=#000000> " +
+                                              "<td width=45 height=20><font size=2 face=Verdana, Arial, Helvetica, sans-serif>3.</font></td>" +
+                                              "<td width=58><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC17]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td width=39><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC18]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td width=67><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC19]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC20]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC21]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                               "<td width=35><font size=2 face=Verdana, Arial, Helvetica, sans-serif> " + $([hfC22]).val().trim() + "" +
+                                               "&nbsp;</font></td>" +
+                                              "<td align=left width=282><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC23]).val().trim() + "" +
+
+                                              "&nbsp;" + $([hfC24]).val().trim() + "&nbsp;</font></td>" +
+            //
+                                               "<tr align=center bordercolor=#000000> " +
+                                              "<td width=45 height=20><font size=2 face=Verdana, Arial, Helvetica, sans-serif>4.</font></td>" +
+                                              "<td width=58><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC25]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td width=39><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC26]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td width=67><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC27]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC28]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC29]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                               "<td width=35><font size=2 face=Verdana, Arial, Helvetica, sans-serif> " + $([hfC30]).val().trim() + "" +
+                                               "&nbsp;</font></td>" +
+                                              "<td align=left width=282><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC31]).val().trim() + "" +
+
+                                              "&nbsp;" + $([hfC32]).val().trim() + "&nbsp;</font></td>" +
+
+                                            //
+                                             "<tr align=center bordercolor=#000000> " +
+                                              "<td width=45 height=20><font size=2 face=Verdana, Arial, Helvetica, sans-serif>5.</font></td>" +
+                                              "<td width=58><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC33]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td width=39><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC34]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td width=67><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC35]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC36]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                              "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC37]).val().trim() + "" +
+                                              "&nbsp;</font></td>" +
+                                               "<td width=35><font size=2 face=Verdana, Arial, Helvetica, sans-serif> " + $([hfC38]).val().trim() + "" +
+                                               "&nbsp;</font></td>" +
+                                              "<td align=left width=282><font size=2 face=Verdana, Arial, Helvetica, sans-serif>" + $([hfC39]).val().trim() + "" +
+
+                                              "&nbsp;" + $([hfC40]).val().trim() + "&nbsp;</font></td>" +
+                                            "</tr>" +
+
+
+                                       " </table>" +
+                                        "<table width=612 border=0 cellpadding=0 cellspacing=0>" +
+                                          "<tr>" +
+                                            "<td width=139 height=19><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                            "<td width=187><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                            "<td width=218><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                          "</tr>" +
+                                          "<tr>" +
+                                           " <td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                            "<td><font size=2 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;</font></td>" +
+                                            "<td><div align=right><font size=2 face=Verdana, Arial, Helvetica, sans-serif><br><br>Controller of Examinations </font></div></td>" +
+                                          "</tr>" +
+										  "<tr>" +
+                                           " <td colspan=3 align=justify><div align=justify>" +
+                                            "  <p><font size=1 face=Verdana, Arial, Helvetica, sans-serif><strong>Note: Web Based printed roll number slips will be accepted by the center superintendent " +
+										      "on production of original CNIC issued by NADRA or any photographed authenticated document. This is electronic version of roll number slip. Erorrs and ommissions excepted.</strong></font></p>" +
+
+                                            "</div></td>" +
+                                          "</tr>" +
+										  "<tr>" +
+                                           " <td height=30 colspan=3 align=right><div align=right>" +
+                                              "<p><font size=1><img src=Images/notee.gif width=489 height=29></font>" +
+										       "<font size=1><img src=Images/note_one.gif width=601 height=38></font></p>" +
+
+
+                                           " </div></td>" +
+                                         " </tr>" +
+                                        "</table>" +
+                                        "<p><img src=Images/rslipback.gif></p>" +
+"</div>" +
+"</td>" +
+"</tr>" +
+"</table>";
+
+            return table;
+        }
+    </script>
+     <script type="text/javascript">
+
+         //function vidplay() {
+         //    //<body onLoad = "javascript:vidplay()">
+         //    alert("hi, please activate your email Address");
+         //    TheNewWin = window.open('https://student.aiou.edu.pk/studentprofile/ResendActivationCode.aspx');
+         //     blinkOn();
+         //}
+
+
+</script>
+</head>
+<body onLoad = "javascript:vidplay()">
+    <div class="containter">
+    <form method="post" action="./inbox.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGuBlfgdf0IRjRnckgEgzqV6ZLDzPCn7d6vo1NaG27psBJAQfND4Pq3xTKwOdPclWQ2&amp;t=636161020665894255" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=D9drwtSJ4hBA6O8UhT6CQtSQwqJtSOZocQ1c0OtBTmJPmKpnHzfQoVu6OFvJYkS6uoYQkfjlGBH8_gIOf-4ZQV5b6RTn2QNpSKryEYL-nvQsGKlZqptB2LcmYbjSkDbftkyNb1YsfN97oEx6bKl1Q3m_E3spkheZlJvjUpqfz7A1&amp;t=2a48f442" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=JnUc-DEDOM5KzzVKtsL1teMIVRk_vhRUvatKux9ovz3uZI5_pznc6moj1xOsFa4hunQD_IRocoDPGZ5FHgUD7upKf9OrzzweyVqfoNC-Hgz8gNBQIqgYxLq6QysaQ4dHIqIDanT-tpxkILkq6pqjTgWvTmfE7CZZZE_ZSmlVne8SpQyA6oYt9NTfmmT5xxvC0&amp;t=2a48f442" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="64E8AFC5" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="2+zCnyhIKplaEDhszSS4zAg3PG4gTwUrq6P0oG+QOxu/I5wECtHadxbvhMIw2FDI7FSSHHZ0ibSc5lKXxbs4UEwK8vhGZD8m+aCVmmc85kDyOSovurMPtTcbkvoBhO3JdPIHRnLJNsICMNPV95QyRfN5q9FvGw0KqFCFWyFGdh+c3/DySuy8D9GT95vlcwd9R9sZrf2ZgJ/IoHPjUyx5kk+qdyrZscX4iyhpF7BDM+lf790+J6XBLFrcx7MgoJguJd7Wlcbum05de/tY8mDZbGNTliL8rXZwhWqwAfoEAzCUDJJF/BKwBU/AXzOxqnHvoOnsyYmnymwAXltW38ZeZA7BGdHZVk47S9MqWuaP9zDd8RSryGJ8vg63UoiCKihx8NRyDREO3Rj56D7DhiwD+x/we3tsIbmlFYDP7ehcfOlniXJCR8DtKgIFnbqDO/WjrENJdRuQbO1LoyoQZ7IT+YyGSzd+nZSe84FXsiQjFkSUlu7bVix2/26cP9Ee5XIuG4sDfH6LjyPV3FHW0eCu4tEgWykEsr+Se72k9msfBreO2V7Ln+q/sK9Dh0rEhRUjB2KXdsrrel3nK2q7MHMDDASnPqyg6ebE+FyX75DXzYA7gHO9xY0LcG4TysAb2W2rWmtKPtyQaK0kW2C4xYbgC7ryvqG6e0v1S1yVcpuDr2EEfg6MNAkWmrsQKovjJWpZZKAwc2hqzuTCV3ZG8Ds4O8qVEO8Ohg15uyjW6r1LWOxwho1j6i2Mi8YtcQnRQw/4W5IWRrTSPyn6yYK6P2r0+LLWJcxZr3GVMkDW5WqqtnxdbgDKGAT8W3wxu5xt6HdI" />
+</div>
+        <nav class="navbar navbar-default">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+     <img src="images/logo.png" width="50px"><a class="navbar-brand" href="#">Allama Iqbal Open University</a></div> 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+  
+   
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+        
+  <div class="auto-style8" style="margin-right:50px;">
+      
+          <span id="LabelLogin" style="color:Black;font-size:Small;">Welcome, SAMREEN</span>
+      
+
+          <a id="LinkButton1" href="javascript:__doPostBack(&#39;LinkButton1&#39;,&#39;&#39;)" style="color:Red;font-size:Small;">Logout</a>
+      
+           </div>
+         <div class="row">
+              
+    <div class="col-md-6 col-md-offset-3">
+       
+      <h1 class="text-primary" id="text-center"><strong>Student Profile</strong></h1>
+    </div>
+        </div>
+ <div class="col-md-2" style="text-align:center;">
+            <img id="Image2" class="img-thumbnail" src="images/photos/BW622364.jpg" style="height:150px;width:150px;float:none; margin-top:20px; " />
+        </div>
+   <div class="col-md-8">
+             <h1 class="text-primary" ><strong>&nbsp;<span id="Labelname">SAMREEN</span> </strong></h1>
+    <div class="loading" id="modalSending">
+   <img src="images/loading (1).gif"  width="200px"/>
+</div>
+
+    <div class="text-left col-sm-12 table-responsive">
+        <table  class="auto-style1 ">
+                
+                                  
+                        <tr>
+                            <td class="auto-style9"><strong>ROLL NUMBER:</strong></td>
+                            <td>
+                                    <strong>
+                                    <span id="LabelRollNumber">BW622364</span>
+                                    </strong>
+                                </td>
+                        </tr>
+                        <tr style="display:none">
+                            <td class="auto-style9"><strong>LevelID:</strong></td>
+                            <td>
+                                    <strong>
+                                    <span id="LabelLevelID">10</span>
+                                    </strong>
+                                </td>
+                        </tr>
+                        <tr style="display:none">
+                            <td class="auto-style9"><strong>ProgramID:</strong></td>
+                            <td>
+                                    <strong>
+                                    <span id="LabelProgramID">11</span>
+                                    </strong>
+                                </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="auto-style9" ><strong>REGISTRATION:</strong></td>
+                             <td >
+                                    <strong>
+                                    <span id="LabelRegistration">19SKE00151</span>
+                                    </strong>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style9"><strong>PROGRAM:</strong></td>
+                            <td>
+                                    <strong>
+                                    <span id="LabelProgram">B.ED (1.5 YEARS)</span>
+                                    </strong>
+                                </td>
+                        </tr>    
+                        <tr>
+                            <td class="auto-style9"><strong>FATHER NAME:</strong></td>
+                            <td>
+                                    <strong>
+                                    <span id="Labelfathername">ABDUL WAHAB</span>
+                                    </strong>
+                               </td>
+                        </tr>
+                <tr><td class="auto-style9" ><strong>ADDRESS:</strong></td>
+                    <td class="text-left">
+                    <strong>
+                    <span id="LabelAddress">QUARTER NO. 299 SECTOR 51/B KORANGI NO. 6</span>
+                        <span id="Labeltehsil">KARACHI EAST</span>
+                        <span id="Labeldistrict">KARACHI EAST</span>
+                        
+
+                    </strong></td>
+                </tr>
+              </table>
+    </div>
+
+    
+
+ </div>
+        
+       <div class="row"></div>
+        <hr />
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('scrip1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+          
+            <div class="col-md-2">  
+
+              <div id="navigationl">  
+        <ul>
+            <li>                
+                <a href="#" onclick="swap('sectionOneLinks');return false;">Admissions</a>
+                <ul id="sectionOneLinks" style="display: none;">
+                  <li><input type="submit" name="ButtonSubmit" value="Current Admission" onclick="javascript:return ShowSendingProgress();" id="ButtonSubmit" style="width:100%; text-align:left;" /></li>
+                    <li><input type="submit" name="BTNAdmissionHistroy" value="Admissions History" onclick="javascript:return ShowSendingProgress();" id="BTNAdmissionHistroy" style="width:100%; text-align:left;" /></li>                    
+                  <li><input type="submit" name="ButtonTutor" value="Allocated Tutors" onclick="javascript:return ShowSendingProgress();" id="ButtonTutor" style="width:100%; text-align:left;" /></li>
+                  <li><input type="submit" name="ButtonAdmissionForm" value="Print Admission Form" id="ButtonAdmissionForm" style="width:100%; text-align:left;" /></li>
+                  <li><input type="submit" name="ButtonMaling" value="Books Dispatch" onclick="javascript:return ShowSendingProgress();" id="ButtonMaling" style="width: 100%; text-align:left;" /></li>
+                      
+                </ul>                      
+
+            </li>
+            <li>
+                <a href="#" onclick="swap('sectionTwoLinks');return false;">Examinations</a>
+                <ul id="sectionTwoLinks" style="display: none;">
+                  <li><input type="submit" name="ButtonExamination" value="Current Result" onclick="javascript:return ShowSendingProgress();" id="ButtonExamination" style="width: 100%; text-align:left;" /></li>
+                    <li><input type="submit" name="BTNExaminationHistroy" value="Result History" onclick="javascript:return ShowSendingProgress();" id="BTNExaminationHistroy" style="width: 100%; text-align:left;" /></li>
+                  <li><input type="submit" name="ButtonAssignment" value="Assignment Marks" onclick="javascript:return ShowSendingProgress();" id="ButtonAssignment" style="width: 100%; text-align:left;" /></li>
+                  <li><input type="submit" name="ButtonRollNumberSlip" value="Roll No. Slip" onclick="javascript:return ShowSendingProgress();" id="ButtonRollNumberSlip" style="width: 100%; text-align:left;" /></li>
+                  <li><input type="submit" name="ButtonDTS" value="Degree Tracking Systen" onclick="javascript:return ShowSendingProgress();" id="ButtonDTS" style="width: 100%; text-align:left;" /></li>
+                    <li><input type="submit" name="ButtonDMC" value="Provisional Certificates" onclick="javascript:return ShowSendingProgress();" id="ButtonDMC" style="width: 100%; text-align:left;" /></li>
+                    <li></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="swap('sectionThreeLinks');return false;">Tutorials / Study </a>
+                <ul id="sectionThreeLinks" style="display: none;">
+                  <li><input type="submit" name="ButtonWorkshop" value="Workshops" onclick="javascript:return ShowSendingProgress();" id="ButtonWorkshop" style="width: 100%; text-align:left;" /></li>
+                  <li><input type="submit" name="Button1" value="Assignments" onclick="javascript:return ShowSendingProgress();" id="Button1" style="width: 100%; text-align:left;" /></li>
+                  <li><input type="submit" name="Button4" value="Tutorial Schedules" onclick="javascript:return ShowSendingProgress();" id="Button4" style="width: 100%; text-align:left;" /></li>
+                    <li><input type="submit" name="ButtonMultimedia" value="Multimedia" onclick="javascript:return ShowSendingProgress();" id="ButtonMultimedia" style="width: 100%; text-align:left;" /></li>
+                        
+                </ul>
+            </li>
+      
+        </ul>
+
+    </div>
+                  
+          </div> 
+               
+       
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+    <div class="col-md-10">
+        <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav" id="menu">    
+        <li class="active" style="padding-left:10px;"><input type="submit" name="Button2" value="Calculate Admission Fee" onclick="window.open(&#39;http://fee.aiou.edu.pk&#39;); return false;" id="Button2" style="background-color:Transparent;border-color:Transparent;height:50px;" /></li> 
+        <li class="active" style="padding-left:10px;"><input type="submit" name="Button6" value="Downloads" onclick="window.open(&#39;http://www.aiou.edu.pk/download.asp&#39;); return false;" id="Button6" style="background-color:Transparent;border-color:Transparent;height:50px;" /></li>
+        <li class="active" style="padding-left:10px;"><input type="submit" name="Button7" value="Live FM Radio" onclick="window.open(&#39;http://iet.aiou.edu.pk/?page_id=59&#39;); return false;" id="Button7" style="background-color:Transparent;border-color:Transparent;height:50px;" /></li>
+        <li class="active" style="padding-left:10px;"><input type="submit" name="Button8" value="Live Web TV" onclick="window.open(&#39;http://iet.aiou.edu.pk/?page_id=9&#39;); return false;" id="Button8" style="background-color:Transparent;border-color:Transparent;height:50px;" /></li>
+            
+        <li class="active" style="padding-left:10px;"><input type="submit" name="Button10" value="Student Advisory" onclick="window.open(&#39;http://dsacs.aiou.edu.pk&#39;); return false;" id="Button10" style="background-color:Transparent;border-color:Transparent;height:50px;" /></li>
+        <li class="active" style="padding-left:10px;"><input type="submit" name="Button11" value="ELMS" onclick="window.open(&#39;https://e5.onthehub.com/WebStore/Welcome.aspx?ws=a9f2fc62-fff8-e011-8e6c-f04da23e67f6&amp;vsro=8&#39;); return false;" id="Button11" style="background-color:Transparent;border-color:Transparent;height:50px;" /></li>
+        
+        <li class="active" style="padding-left:10px;"><input type="submit" name="Button12" value="AIOU Library" onclick="window.open(&#39;http://library.aiou.edu.pk/&#39;); return false;" id="Button12" style="background-color:Transparent;border-color:Transparent;height:50px;" /></li>
+        <li class="active" style="padding-left:10px;"><input type="submit" name="Button13" value="Help Desk" onclick="window.open(&#39;http://support.aiou.edu.pk&#39;); return false;" id="Button13" style="background-color:Transparent;border-color:Transparent;height:50px;" /></li>
+        <li class="active" style="padding-left:10px;"><input type="submit" name="Button14" value="FAQs" onclick="window.open(&#39;http://www.aiou.edu.pk/FAQs.asp&#39;); return false;" id="Button14" style="background-color:Transparent;border-color:Transparent;height:50px;" /></li>
+     
+        <li class="active" style="padding-left:10px;"> <input type="submit" name="btnlms" value="LMS" id="btnlms" style="background-color:Transparent;border-color:Transparent;height:50px;display:block" /> </li>
+        
+        <li class="active" style="padding-left:10px;">
+            
+            
+            
+            <!--<input type="submit" name="Button3" value="LMS" onclick="window.open(&#39;http://olive.aiou.edu.pk/lms/login/index.php&#39;); return false;" id="Button3" style="background-color:Transparent;border-color:Transparent;height:50px;" />-->
+            <!--<input type="submit" name="LMS" value="LMS" id="LMS" style="background-color:Transparent;border-color:Transparent;height:50px;" />-->
+
+           
+            
+
+        </li>
+
+         
+        
+        
+    </ul>
+  </div>
+</nav>
+         
+  
+                                          
+        
+        
+            
+           
+        
+        
+        
+            
+           
+       
+    
+            
+      
+        
+      
+    <div>
+        
+        
+        </div>
+               
+            
+    <div id="DivGridViewAssignments" class="text-left">
+      <h3 class="text-left"><strong>Current Courses</strong></h3>
+      <div>
+          <strong>
+          <span id="LabelError1" class="auto-style2">Semester, Spring 2019</span></strong></div>
+            <div class="text-left table-responsive">
+            <div>
+	<table cellspacing="0" cellpadding="3" rules="all" id="GridViewAssignments" style="background-color:#F4F4F4;border-color:#CCCCCC;border-width:1px;border-style:None;width:75%;border-collapse:collapse;">
+		<tr style="color:White;background-color:#006699;font-weight:bold;">
+			<th scope="col">COURSE CODES</th><th scope="col">COURSE TITLES</th><th scope="col">Assignmnets</th>
+		</tr><tr style="color:#000066;">
+			<td>8604</td><td>RESEARCH METHODS IN EDUCATION (PROFESSIONAL)</td><td>
+            <a id="GridViewAssignments_viewAssignment_0" href="javascript:__doPostBack(&#39;GridViewAssignments$ctl02$viewAssignment&#39;,&#39;&#39;)">View Assignment</a>
+        </td>
+		</tr><tr style="color:#000066;">
+			<td>8601</td><td>GENERAL METHODS OF TEACHING(PROFESSIONAL)</td><td>
+            <a id="GridViewAssignments_viewAssignment_1" href="javascript:__doPostBack(&#39;GridViewAssignments$ctl03$viewAssignment&#39;,&#39;&#39;)">View Assignment</a>
+        </td>
+		</tr><tr style="color:#000066;">
+			<td>8606</td><td>CITIZENSHIP EDUCATION AND COMMUNITY ENGAGEMENT</td><td>
+            <a id="GridViewAssignments_viewAssignment_2" href="javascript:__doPostBack(&#39;GridViewAssignments$ctl04$viewAssignment&#39;,&#39;&#39;)">View Assignment</a>
+        </td>
+		</tr><tr style="color:#000066;">
+			<td>8602</td><td>EDUCATIONAL ASSESSMENT AND EVALUATION (PROFESSIONAL)</td><td>
+            <a id="GridViewAssignments_viewAssignment_3" href="javascript:__doPostBack(&#39;GridViewAssignments$ctl05$viewAssignment&#39;,&#39;&#39;)">View Assignment</a>
+        </td>
+		</tr><tr style="color:#000066;">
+			<td>8603</td><td>CURRICULUM DEVELOPMENT (PROFESSIONAL)</td><td>
+            <a id="GridViewAssignments_viewAssignment_4" href="javascript:__doPostBack(&#39;GridViewAssignments$ctl06$viewAssignment&#39;,&#39;&#39;)">View Assignment</a>
+        </td>
+		</tr><tr style="color:#000066;">
+			<td>8605</td><td>EDUCATIONAL LEADERSHIP AND MANAGEMENT (PROFESSIONAL)</td><td>
+            <a id="GridViewAssignments_viewAssignment_5" href="javascript:__doPostBack(&#39;GridViewAssignments$ctl07$viewAssignment&#39;,&#39;&#39;)">View Assignment</a>
+        </td>
+		</tr>
+	</table>
+</div>
+            </div>
+            
+  
+            </div>
+ 
+           
+        
+  <div class="col-md-12" style="text-align:center;">
+  
+  </div>
+       
+    
+   
+   
+ 
+
+         
+           
+
+
+
+        
+
+<script type="text/javascript">
+//<![CDATA[
+alert('No Records found with this Roll Number in Database.');//]]>
+</script>
+</form>
+    </div> 
+  
+
+  <div class="row" >
+    <div class="text-center col-md-12" style="margin-top:25px;">
+      <p>Copyright &copy; 2016-2017 &middot; All Rights Reserved &middot; <a href="http://aiou.edu.pk/" >Allama Iqbal Open University</a></p>
+        <span id="labelcounter">Online Users: 1757</span>
+    </div>
+      
+        
+  </div>
+
+    
+
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.2.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+
+    
+</body>
+</html>
